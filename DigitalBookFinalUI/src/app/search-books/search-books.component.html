@@ -1,0 +1,66 @@
+<div class="container">
+<span class="magb10"><h2>Welcome {{currentuser}}</h2></span>
+  <form (ngSubmit)="onSearchSubmit()">
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="AuthorName"><b>Author Name</b></label>
+            <input type="text" class="form-control" name="authorname" id="authorname" placeholder="Author Name"
+                [(ngModel)]="book.authorName">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="category"><b>Category</b></label>
+            <input type="text" class="form-control" name="category" id="category" placeholder="Category"
+                [(ngModel)]="book.category">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="bookPrice"><b>Price</b></label>
+            <input type="text" class="form-control" name="bookPrice" id="bookPrice" placeholder="Price"
+                [(ngModel)]="book.price">
+        </div>
+    </div>
+
+    <div class="row col-md-3 offset-9">
+        <button id="btnSearch" class="btn btn-primary btn-block">Search</button>
+    </div>
+</form>
+  <br>
+  <div class="card-body">
+      <div class="table-responsive">
+          <table class="table" *ngIf="books.length">
+              <thead class="table-dark">
+                  <tr>
+
+                      <th>Logo</th>
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Publisher</th>
+                  <th>Price</th>
+                  <th>Published Date</th>
+                  <th>Category</th>
+                  <th>Buy Book</th>
+                  </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let book of books">
+                  <td><img src="../assets/Images/img1.jpg" alt="bookImage" style="width: 65px;"></td>
+                  <td>{{book.bookId}}</td>
+                    <td>{{book.title}}</td>
+                    <td>{{book.authorName}}</td>
+                    <td>{{book.publisher}}</td>
+                    <td>{{book.price}}</td>
+                    <td>{{book.publisedDate | date}}</td>
+                    <td>{{book.category}}</td>
+                    <td><button  (click)="bookPurchase(book.bookId)">Buy Book</button></td>
+                </tr>
+                      <!-- <td><button (click)='bookPurchase(book.bookId)'>Buy</button></td> -->
+
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

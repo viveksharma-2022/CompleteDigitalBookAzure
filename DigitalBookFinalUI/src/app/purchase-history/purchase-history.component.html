@@ -1,0 +1,49 @@
+
+<div class="container">
+  <h1>Purchased Book History</h1>
+  <div class="cards-container">
+      <div class="cards-form">
+          <form #form="ngForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                  <label for=""><h5><b>Email&nbsp;&nbsp;</b></h5></label>
+                  <input type="email" name="email" [(ngModel)]="pay.buyerEmailId"><br/>
+                  <span id="emailerror" class="colours" *ngIf="emailerror">Please enter email Id!</span>
+              </div>
+              <div class="form-group">
+                  <button class="btn btn-primary">Get Purchased Book Details</button>
+              </div>
+              <!-- <div class="form-group">
+                <button>Get Purchased Book Details</button>
+            </div> -->
+          </form>
+      </div>
+  </div>
+</div>
+
+<div class="card-body" *ngIf='showHistory'>
+  <div class="table-responsive">
+      <table class="table" *ngIf="history.length">
+          <thead class="table-dark">
+              <tr>
+                  <th>PaymentId</th>
+                  <th>Title</th>
+                  <th>Email</th>
+                  <!-- <th>Book Id</th> -->
+                  <th>Refund</th>
+
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let item of history">
+                  <td>{{item.paymentId}}</td>
+                  <td>{{item.title}}</td>
+                  <td>{{item.buyerEmailId}}</td>
+                  <!-- <td>{{item.bookId}}</td> -->
+                  <td><a href="" class="nav-link colours " routerLink="/purchaseHistory" (click)="GetRefund(item)">Refund</a></td>
+
+              </tr>
+          </tbody>
+      </table>
+      <button type="button" class="btn btn-primary" routerLink="/invoice">Get Invoice by PaymentID</button>
+  </div>
+</div>

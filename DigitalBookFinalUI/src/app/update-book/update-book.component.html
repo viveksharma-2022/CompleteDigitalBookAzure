@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>Update Book</h2>
+    <form #form="ngForm" (ngSubmit)="updateBook()">
+        <div class="form-group">
+            <label class="space" for="">BookId</label>
+            <input class="form-control" type="text" [(ngModel)]="book.bookId" name="bookId" readonly>
+        </div>
+        <div class="form-group">
+            <label class="space" for="">Title</label>
+            <input class="form-control" type="text" [(ngModel)]="book.title" name="title">
+        </div>
+        <div class="form-group">
+            <label class="space" for="">Category</label>
+            <input class="form-control" type="text" [(ngModel)]="book.category" name="category">
+        </div>
+        <div class="form-group">
+            <label class="space" for="">Price</label>
+            <input class="form-control" type="text" [(ngModel)]="book.price" name="price">
+        </div>
+        <div class="form-group">
+            <label class="space" for="">Author</label>
+            <input class="form-control" type="text" [(ngModel)]="book.authorName" name="authorname">
+        </div>
+
+        <div class="form-group">
+            <label class="space" for="">Publisher</label>
+            <input class="form-control" type="text" [(ngModel)]="book.publisher" name="publisher">
+        </div>
+        <div class="form-group">
+            <label class="space" for="">Published Date</label>
+            <input class="form-control" type="text" [(ngModel)]="book.publisedDate" name="publisheddate">
+        </div>
+
+        <div class="form-group">
+            <label class="space" for="">Content</label>
+            <input class="form-control" type="text" [(ngModel)]="book.content" name="content">
+        </div>
+        <div class="form-group">
+            <label class="space" for="">Active</label>
+            <input class="form-control" type="text" [(ngModel)]="book.active" name="active">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Update Book</button>
+        </div>
+
+    </form>
+</div>

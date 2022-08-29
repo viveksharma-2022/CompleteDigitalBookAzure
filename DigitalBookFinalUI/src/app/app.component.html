@@ -1,0 +1,38 @@
+<!-- <app-login-comp></app-login-comp> -->
+
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark ">
+    <a class="navbar-brand col-md-5 headermargin" routerLink="">BookStore App</a>
+    <!-- <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <p class="nav-link">{{this.currentUser}}</p>
+      </li>
+
+    </ul> -->
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item">
+        <a  class="nav-link" routerLink="purchaseHistory">Purchase History </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" >
+      <li class="nav-item">
+        <a href="/signup" class="nav-link" routerLink="signup">SignUp</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" id="Loggedinbutton" *ngIf="!token">
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Signin</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto"  id="logoutbutton"  *ngIf="token">
+      <li class="nav-item">
+        <a href="/login" class="nav-link" (click)="logOut()" routerLink="login">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
+    <!-- <app-book-show-comp></app-book-show-comp> -->
+  </div>
+
+</div>

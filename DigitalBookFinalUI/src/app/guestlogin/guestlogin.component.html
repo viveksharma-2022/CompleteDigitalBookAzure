@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="cards-container">
+      <div class="cards-form">
+          <form #form="ngForm" (ngSubmit)="onSubmit()">
+              <h4>Provide your emailid and name</h4>
+              <div class="form-group ">
+                <label class="marginr35" for="">BookId</label>
+                <input type="number" name="bookId" value="book.bookId" [(ngModel)]="cred.bookId" >
+            </div>
+
+            <div class="form-group">
+              <label for="" class="marginr18">BookTitle</label>
+              <input type="text" name="title" value="book.title" [(ngModel)]="cred.title" >
+          </div>
+              <div class="form-group">
+                  <label for="" class="marginr30">EmailId</label>
+                  <input type="text" name="EmailId" [(ngModel)]="cred.buyerEmailId">
+              </div>
+              <div class="form-group">
+                  <label for="" class="marginr38">Name</label>
+                  <input type="text" name="Name" [(ngModel)]="cred.buyerName">
+              </div>
+              <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Proceed to buy</button>
+              </div>
+
+          </form>
+      </div>
+  </div>
+</div>

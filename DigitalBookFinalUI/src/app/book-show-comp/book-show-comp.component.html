@@ -1,0 +1,38 @@
+<div class="card-body widt">
+  <span class="marb10"><h2>Welcome {{currentUser}}</h2></span>
+  <div class="table-responsive">
+      <table class="table" >
+          <thead class="table-dark">
+              <tr>
+                  <th class="col-md-2">Logo</th>
+                  <th>BookId</th>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Publisher</th>
+                  <th>Price</th>
+                  <th>Published Date</th>
+                  <th>Category</th>
+                  <th>Edit</th>
+                  <th>Blockbook</th>
+                  <th>Unblock</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor='let books of book | filter:searchedKeyword'>
+                  <td><img src="../assets/Images/img1.jpg" alt="bookImage" style="width: 65px;"></td>
+                  <td style="padding-top: 20px;">{{books.bookId}}</td>
+                  <td style="padding-top: 20px;">{{books.title}}</td>
+                  <td style="padding-top: 20px;">{{books.authorName}}</td>
+                  <td style="padding-top: 20px;">{{books.publisher}}</td>
+                  <td style="padding-top: 20px;">{{books.price}}</td>
+                  <td style="padding-top: 20px;">{{books.publisedDate}}</td>
+                  <td style="padding-top: 20px;">{{books.category}}</td>
+                 <td><a  [routerLink]="['/updatebook',books.bookId]" >Update Book</a></td>
+                 <td><a *ngIf="books.active" href="" class="nav-link colours pad25" routerLink="/authorHome" (click)="blockBook(this.books)">block</a></td>
+                 <td><a href="" *ngIf="!books.active" class="nav-link colours" routerLink="/authorHome" (click)="UnblockBook(this.books)">Unblock</a></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+   <a class="btn btn-primary" routerLink="/addBooks" >Add Book</a>
+</div>

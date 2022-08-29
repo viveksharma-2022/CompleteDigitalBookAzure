@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="cards-container">
+        <div class="cards-form">
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+                <h4>Welcome to Login Page</h4>
+                <div class="form-group">
+                    <label for="">User Name</label>
+                    <input type="text" name="Username" [(ngModel)]="cred.UserName" required><br>
+                    <span id="usernamediv" *ngIf="usernamediv" class="coluor">Please enter Username!!</span>
+                </div>
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input type="password" name="password" [(ngModel)]="cred.Password" required><br>
+                    <span id="passdiv" *ngIf="passdiv" class="coluor">Please enter password!!</span>
+                </div>
+                <div>
+                    <button class="btn btn-primary btn-block" (click)="onSubmit()">Login</button>
+                </div><br>
+                <div>
+                  <button class="btn btn-primary btn-block" href="/signup" routerLink="/signup">Sign Up</button>
+              </div>
+            </form>
+        </div>
+    </div>
+</div>

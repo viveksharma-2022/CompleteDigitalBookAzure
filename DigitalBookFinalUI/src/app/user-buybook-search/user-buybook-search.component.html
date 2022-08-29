@@ -1,0 +1,41 @@
+
+<div class="card-body">
+  <span><h2>Welcome {{currentuser}}</h2></span>
+  <div class="col-md-6 searchstyle">
+    <h2><b>Search books</b></h2>
+  </div>
+  <div class="form-group col-md-8 padl0">
+    <input type="text" class="form-control "  placeholder="Search by Author, category or price" [(ngModel)]="searchedKeyword">
+  </div>
+  <div class="table-responsive">
+      <table class="table" >
+          <thead class="table-dark">
+              <tr>
+                  <th>Logo</th>
+                  <th>ID</th>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Publisher</th>
+                  <th>Price</th>
+                  <th>Published Date</th>
+                  <th>Category</th>
+                  <th>Buy Book</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor='let books of book | filter:searchedKeyword'>
+                <td><img src="../assets/Images/img1.jpg" alt="bookImage" style="width: 65px;"></td>
+                <td>{{books.bookId}}</td>
+                  <td>{{books.title}}</td>
+                  <td>{{books.authorName}}</td>
+                  <td>{{books.publisher}}</td>
+                  <td>{{books.price}}</td>
+                  <td>{{books.publisedDate | date}}</td>
+                  <td>{{books.category}}</td>
+                  <td><a  [routerLink]="['/guestLogin',books.bookId]">Buy Book</a></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+</div>
