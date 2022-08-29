@@ -1,0 +1,203 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/Author/CreateAccount",
+      "DownstreamScheme": "https",
+      "DownstreamHttpMethod": "POST",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7069
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/digitalbooks/author/signup",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Author/Login",
+      "DownstreamScheme": "https",
+      "DownstreamHttpMethod": "POST",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7069
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/digitalbooks/author/login",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Author/GetBookById",
+      "DownstreamScheme": "https",
+      "DownstreamHttpMethod": "POST",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7069
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/digitalbooks/author/getBooksById",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Author/GetAllBooks",
+      "DownstreamScheme": "https",
+      "DownstreamHttpMethod": "GET",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7069
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/digitalbooks/author/getAllBooks",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/Author/AddBook",
+      "DownstreamScheme": "https",
+      "DownstreamHttpMethod": "POST",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7069
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/digitalbooks/author/addBooks",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Author/UpdateBook",
+      "DownstreamScheme": "https",
+      "DownstreamHttpMethod": "Put",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7069
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/digitalbooks/author/updateBook",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Author/BlockBook",
+      "DownstreamScheme": "https",
+      "DownstreamHttpMethod": "Put",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7069
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/digitalbooks/author/blockBook",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Author/UnblockBook",
+      "DownstreamScheme": "https",
+      "DownstreamHttpMethod": "Put",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7069
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/digitalbooks/author/unblockBook",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "downstreampathtemplate": "/api/Authentication",
+      "downstreamscheme": "https",
+      "DownstreamHttpMethod": "POST",
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": 7103
+        }
+      ],
+      "upstreampathtemplate": "/api/v1/digitalbooks/getValidateAuthentication",
+      "upstreamhttpmethod": [ "post" ]
+    },
+    {
+      "downstreampathtemplate": "/Reader/PurchaseBook",
+      "downstreamscheme": "https",
+      "DownstreamHttpMethod": "POST",
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": 7159
+        }
+      ],
+      "upstreampathtemplate": "/api/v1/digitalbooks/books/buy",
+      "upstreamhttpmethod": [ "POST" ]
+    },
+    {
+      "downstreampathtemplate": "/Reader/GetPurchasedbookbyId",
+      "downstreamscheme": "https",
+      "DownstreamHttpMethod": "POST",
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": 7159
+        }
+      ],
+      "upstreampathtemplate": "/api/v1/digitalbooks/readers/books/getPurchasedbookbypaymentId",
+      "upstreamhttpmethod": [ "POST" ]
+    },
+    {
+      "downstreampathtemplate": "/Reader/GetAllPurchasedBook",
+      "downstreamscheme": "https",
+      "DownstreamHttpMethod": "POST",
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": 7159
+        }
+      ],
+      "upstreampathtemplate": "/api/v1/digitalbooks/readers/emailId/getallpurchasedbooks",
+      "upstreamhttpmethod": [ "POST" ]
+    },
+    {
+      "downstreampathtemplate": "/Reader/SearchBookByCategories",
+      "downstreamscheme": "https",
+      "DownstreamHttpMethod": "Get",
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": 7159
+        }
+      ],
+      "upstreampathtemplate": "/api/v1/digitalbooks/books/searchCategoryAuthorPrice",
+      "upstreamhttpmethod": [ "Get" ]
+    },
+    {
+      "downstreampathtemplate": "/Reader/GetRefund",
+      "downstreamscheme": "https",
+      "DownstreamHttpMethod": "Post",
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": 7159
+        }
+      ],
+      "upstreampathtemplate": "/api/v1/digitalbooks/readers/books/bookId/refund",
+      "upstreamhttpmethod": [ "Post" ]
+    },
+    {
+      "downstreampathtemplate": "/Reader/GetBookById",
+      "downstreamscheme": "https",
+      "DownstreamHttpMethod": "Post",
+      "downstreamhostandports": [
+        {
+          "host": "localhost",
+          "port": 7159
+        }
+      ],
+      "upstreampathtemplate": "/api/v1/digitalbooks/readers/emailId/books/bookId",
+      "upstreamhttpmethod": [ "Post" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7297"
+  }
+}
